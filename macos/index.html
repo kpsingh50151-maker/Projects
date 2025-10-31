@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mac OS</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg"></div>
+    <nav>
+        <div class="content">
+            <div class="left">
+                <div class="logo">
+                    <img id="logo" src="./apple.svg" alt="">
+                    <div id="logo_options" class="options_container">
+                        <button class="options_button">About This Make</button>
+                        <button class="options_button">System Preferences</button>
+                        <button class="options_button">App Store</button>
+                        <button class="options_button">Recent Items</button>
+                        <button class="options_button">Force Quit</button>
+                        <button class="options_button">Sleep</button>
+                        <button class="options_button">Restart</button>
+                        <button class="options_button logout">Shut Down</button>
+                        <button class="options_button">Lock Screen</button>
+                        <button class="options_button logout">Log Out [user]</button>
+                    </div>
+                </div>
+                <div class="app_name" id="finder_oc">
+                    Finder
+                </div>
+            </div>
+            <div class="right">
+                <div class="right_buttons">
+                    <div class="wifi">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <div class="desktop">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <div class="volume">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </div>
+                    <div class="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <div class="currentTime">
+                    <span id="day">Fri</span>
+                    <span id="time">0:00</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="app" id="app">
+            <div class="parent-finder" id="parent_finder">
+                <div class="finder" id="finder_content">
+                    <div class="div1-f">
+                        <div class="finder_nav">
+                            <button class="finder_nav_cbuttons" id="finder_redbtn"><i
+                                    class="fa-solid fa-xmark"></i></button>
+                            <button class="finder_nav_cbuttons" id="finder_yellowbtn"><i class="fa-solid fa-minus"></i>
+                            </button>
+                            <button class="finder_nav_cbuttons" id="increase_appsize">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+                                    <defs>
+                                        <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+                                            <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />
+                                            <feOffset in="blur" dx="0" dy="2" result="off" />
+                                            <feComposite in="off" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1"
+                                                result="inner" />
+                                            <feColorMatrix in="inner" type="matrix" values="0 0 0 0 0
+                                                                                            0 0 0 0 0
+                                                                                            0 0 0 0 0
+                                                                                            0 0 0 0.5"
+                                                result="shadow" />
+                                            <feComposite in="shadow" in2="SourceGraphic" operator="over" />
+                                        </filter>
+
+                                        <linearGradient id="outerGrad" x1="0" x2="0" y1="0" y2="1">
+                                            <stop offset="0" stop-color="#43d24a" />
+                                            <stop offset="1" stop-color="#2fb93a" />
+                                        </linearGradient>
+
+                                        <linearGradient id="innerGrad" x1="0" x2="0" y1="0" y2="1">
+                                            <stop offset="0" stop-color="#1f6b23" />
+                                            <stop offset="1" stop-color="#0d5b18" />
+                                        </linearGradient>
+                                    </defs>
+
+                                    <circle cx="100" cy="100" r="92" fill="url(#outerGrad)" stroke="#2d9f2f"
+                                        stroke-width="1.5" />
+                                    <circle cx="100" cy="100" r="92" fill="none" stroke="#1f7a2b" stroke-opacity="0.08"
+                                        stroke-width="6" />
+
+                                    <g transform="translate(57,57)">
+                                        <rect x="0" y="0" width="86" height="86" rx="6" ry="6" fill="url(#innerGrad)"
+                                            filter="url(#innerShadow)" />
+
+                                        <rect x="-20" y="34" width="130" height="18" rx="3" ry="3"
+                                            fill="url(#outerGrad)" transform="rotate(-45 43 43)" />
+                                    </g>
+
+                                    <circle cx="100" cy="100" r="92" fill="none" stroke="#ffffff" stroke-opacity="0.04"
+                                        stroke-width="2" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="finder_folders">
+                            <div class="finder_folder">Photos</div>
+                            <div class="finder_folder">Videos</div>
+                            <div class="finder_folder active_finder_folder">Projects</div>
+                            <div class="finder_folder">Apps</div>
+                            <div class="finder_folder">Docs</div>
+                        </div>
+                    </div>
+                    <div class="div2-f">
+                        <div class="finder_nav" style="margin-top: 15px;margin-bottom: 12px;">
+                            <div class="folder_name" id="folder_name">Projects</div>
+                        </div>
+                        <div class="divider_right"></div>
+                        <div class="folders">
+                            <img class="folders_img" src="./folders.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="dock-container">
+            <div class="dock">
+                <div class="bg-blur"></div>
+                <div class="dock_apps finder_dock dock_app_info" id="finder_dock" data-info="Finder">
+                    <img src="./finder.png" alt="">
+                </div>
+                <div class="dock_apps dock_app_info" id="screen_recorder_dock" data-info="Screen Recorder">
+                    <img src="./screen_recorder.png" alt="">
+                </div>
+                <div class="dock_apps dock_app_info" id="capcut_dock" data-info="Capcut">
+                    <img src="./capcut.png" alt="">
+                </div>
+                <div class="dock_apps dock_app_info" id="calendar_dock" data-info="Calendar">
+                    <div class="calendar">
+                        <div class="top" id="month"></div>
+                        <div class="bottom" id="date"></div>
+                    </div>
+                </div>
+                <div class="dock_apps dock_app_info" id="settings_dock" data-info="Settings">
+                    <img src="./settings.png" alt="">
+                </div>
+                <div class="dock_apps dock_app_info" id="minecraft_dock" data-info="Minecraft">
+                    <a href=""><img src="./minecraft.png" alt=""></a>
+                </div>
+                <div class="dock_apps dock_app_info" id="wireshark_dock" data-info="Wireshark">
+                    <img src="./wireshark.png" alt="">
+                </div>
+                <div class="dock_apps dock_app_info" id="whatsapp_dock" data-info="Whatsapp">
+                    <img src="./whatapp.png" alt="">
+                </div>
+                <div class="dock_apps dock_app_info" id="vscode_dock" data-info="Visual Studio Code">
+                    <img src="./vscode.png" alt="">
+                </div>
+                <div class="dock_apps dock_app_info" id="chrome_dock" data-info="Chrome">
+                    <img src="./chrome.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
