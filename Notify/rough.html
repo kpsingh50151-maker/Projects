@@ -1,0 +1,141 @@
+<!-- 
+
+<div class="parent">
+    <div class="footer-content-1">1</div>
+    <div class="footer-content-2">2</div>
+    <div class="footer-content-3">3</div>
+    <div class="footer-content-4">4</div>
+    <div class="footer-content-5">5</div>
+    <div class="footer-content-6">6</div>
+</div>
+    
+
+.mid_upper_footer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+}
+    
+.footer-content-1 {
+    grid-row: span 5 / span 5;
+}
+
+.footer-content-2 {
+    grid-row: span 5 / span 5;
+}
+
+.footer-content-3 {
+    grid-row: span 5 / span 5;
+}
+
+.footer-content-4 {
+    grid-row: span 5 / span 5;
+}
+
+.footer-content-5 {
+    grid-row: span 5 / span 5;
+}
+
+.footer-content-6 {
+    grid-row: span 5 / span 5;
+}
+         -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+input[type="range"] {
+  accent-color: #f2f233;
+  cursor: pointer;
+}
+button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+</style>
+<body>
+<div class="player">
+  <audio id="audio" src="song.mp3"></audio>
+
+  <button id="playBtn">▶️</button>
+  <input type="range" id="seekBar" value="0" min="0" step="1">
+  
+  <span id="currentTime">0:00</span> / 
+  <span id="duration">0:00</span>
+  
+  <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+</div>
+
+
+    <script>
+        const audio = document.getElementById("audio");
+const playBtn = document.getElementById("playBtn");
+const seekBar = document.getElementById("seekBar");
+const volumeBar = document.getElementById("volumeBar");
+const currentTime = document.getElementById("currentTime");
+const duration = document.getElementById("duration");
+
+// --- PLAY / PAUSE ---
+playBtn.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    playBtn.textContent = "⏸️";
+  } else {
+    audio.pause();
+    playBtn.textContent = "▶️";
+  }
+});
+
+// --- UPDATE SEEK BAR ---
+audio.addEventListener("timeupdate", () => {
+  seekBar.value = audio.currentTime;
+  currentTime.textContent = formatTime(audio.currentTime);
+});
+
+// --- SET SEEK BAR MAX WHEN LOADED ---
+audio.addEventListener("loadedmetadata", () => {
+  seekBar.max = audio.duration;
+  duration.textContent = formatTime(audio.duration);
+});
+
+// --- SEEK ---
+seekBar.addEventListener("input", () => {
+  audio.currentTime = seekBar.value;
+});
+
+// --- VOLUME ---
+volumeBar.addEventListener("input", () => {
+  audio.volume = volumeBar.value;
+});
+
+// --- FORMAT TIME ---
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60).toString().padStart(2, '0');
+  return `${minutes}:${seconds}`;
+}
+
+    </script>
+</body>
+</html> -->
